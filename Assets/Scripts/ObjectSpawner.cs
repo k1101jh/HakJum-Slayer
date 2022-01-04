@@ -35,102 +35,115 @@ public class ObjectSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () { // 코드 처음 실행시
-		int i = 0;
-		int j = 0;
+        GenerateObjects();
+
+        StartCoroutine(Spawn()); // SpawnBooks()를 주기적으로 실행
+	}
+
+    void GenerateObjects()
+    {
+        int i = 0;
+        int j = 0;
 
         for (j = 0; j < 7; j++)
             spawnPoints[j].rotation = Quaternion.Euler(0, 0, -9 + j * 3);
 
         //phase 1   max delay = 2f  num = 27    4 + 3 + 5 + 5 + 5 + 5
-        gameobs [i++] = new ObjectStruct (false, 2f, 0);
-		gameobs [i++] = new ObjectStruct (false, 1.5f, 3);
-		gameobs [i++] = new ObjectStruct (false, 1.5f, 6);
-		gameobs [i++] = new ObjectStruct (true, 1.5f, 3);
+        gameobs[i++] = new ObjectStruct(false, 2f, 0);
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 3);
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 6);
+        gameobs[i++] = new ObjectStruct(true, 1.5f, 3);
 
-		gameobs [i++] = new ObjectStruct (false, 2f, 2);
-		gameobs [i++] = new ObjectStruct (false, 0f, 3);
-		gameobs [i++] = new ObjectStruct (false, 0f, 4);
+        gameobs[i++] = new ObjectStruct(false, 2f, 2);
+        gameobs[i++] = new ObjectStruct(false, 0f, 3);
+        gameobs[i++] = new ObjectStruct(false, 0f, 4);
 
-		gameobs [i++] = new ObjectStruct (false, 1.5f, 1);
-		gameobs [i++] = new ObjectStruct (false, .2f, 2);
-		gameobs [i++] = new ObjectStruct (false, .2f, 3);
-		gameobs [i++] = new ObjectStruct (false, .2f, 5);
-		gameobs [i++] = new ObjectStruct (true, .7f, 4);
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 1);
+        gameobs[i++] = new ObjectStruct(false, .2f, 2);
+        gameobs[i++] = new ObjectStruct(false, .2f, 3);
+        gameobs[i++] = new ObjectStruct(false, .2f, 5);
+        gameobs[i++] = new ObjectStruct(true, .7f, 4);
 
-		gameobs [i++] = new ObjectStruct (false, 2f, 6);
-		gameobs [i++] = new ObjectStruct (false, .2f, 4);
-		gameobs [i++] = new ObjectStruct (false, .2f, 3);
-		gameobs [i++] = new ObjectStruct (false, .2f, 5);
-		gameobs [i++] = new ObjectStruct (true, .7f, 2);
+        gameobs[i++] = new ObjectStruct(false, 2f, 6);
+        gameobs[i++] = new ObjectStruct(false, .2f, 4);
+        gameobs[i++] = new ObjectStruct(false, .2f, 3);
+        gameobs[i++] = new ObjectStruct(false, .2f, 5);
+        gameobs[i++] = new ObjectStruct(true, .7f, 2);
 
-		gameobs [i++] = new ObjectStruct (false, 2f, 1);
-		j = i;
-		while(i < j + 4) {
-			gameobs [i++] = new ObjectStruct (false, 0f, i - j + 1);
-		}
-			
-		gameobs [i++] = new ObjectStruct (false, 2f, 5);
-		j = i;
-		while(i < j + 4) {
-			gameobs [i++] = new ObjectStruct (false, .1f, 5 - (i - j));
-		}
+        gameobs[i++] = new ObjectStruct(false, 2f, 1);
+        j = i;
+        while (i < j + 4)
+        {
+            gameobs[i++] = new ObjectStruct(false, 0f, i - j + 1);
+        }
+
+        gameobs[i++] = new ObjectStruct(false, 2f, 5);
+        j = i;
+        while (i < j + 4)
+        {
+            gameobs[i++] = new ObjectStruct(false, .1f, 5 - (i - j));
+        }
 
         //phase 2   max delay = 1.5f    num = 75  3 + 5 + 7 + 7 + 5 + 3 + 6 + 3 + 5 + 5 + 4 + 7 + 4 + 3 + 5 + 3
-        gameobs[i++] = new ObjectStruct (false, 2f, 0);
-		gameobs [i++] = new ObjectStruct (false, 0f, 6);
+        gameobs[i++] = new ObjectStruct(false, 2f, 0);
+        gameobs[i++] = new ObjectStruct(false, 0f, 6);
         gameobs[i++] = new ObjectStruct(false, .2f, 3);
 
-        gameobs [i++] = new ObjectStruct (false, 1.5f, 1);
-		gameobs [i++] = new ObjectStruct (false, .2f, 2);
-		gameobs [i++] = new ObjectStruct (false, .2f, 3);
-		gameobs [i++] = new ObjectStruct (false, .2f, 5);
-		gameobs [i++] = new ObjectStruct (true, .6f, 4);
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 1);
+        gameobs[i++] = new ObjectStruct(false, .2f, 2);
+        gameobs[i++] = new ObjectStruct(false, .2f, 3);
+        gameobs[i++] = new ObjectStruct(false, .2f, 5);
+        gameobs[i++] = new ObjectStruct(true, .6f, 4);
 
         gameobs[i++] = new ObjectStruct(false, 1f, 0);
         j = i;
-		while(i < j + 6) {
-			gameobs [i++] = new ObjectStruct (false, 0f, i - j);
-		}
+        while (i < j + 6)
+        {
+            gameobs[i++] = new ObjectStruct(false, 0f, i - j);
+        }
 
-		gameobs [i++] = new ObjectStruct (false, 1.3f, 6);
-		j = i;
-		while(i < j + 6) {
-			gameobs [i++] = new ObjectStruct (false, .1f, 6 - (i - j));
-		}
-			
+        gameobs[i++] = new ObjectStruct(false, 1.3f, 6);
+        j = i;
+        while (i < j + 6)
+        {
+            gameobs[i++] = new ObjectStruct(false, .1f, 6 - (i - j));
+        }
 
-		gameobs [i++] = new ObjectStruct (false, 1.5f, 4);
+
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 4);
         gameobs[i++] = new ObjectStruct(false, 0f, 2);
         gameobs[i++] = new ObjectStruct(false, .2f, 3);
         gameobs[i++] = new ObjectStruct(true, .6f, 4);
         gameobs[i++] = new ObjectStruct(true, 0f, 2);
 
-        gameobs [i++] = new ObjectStruct (false, 1.5f, 6);
-		gameobs [i++] = new ObjectStruct (false, .2f, 3);
-		gameobs [i++] = new ObjectStruct (false, .2f, 0);
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 6);
+        gameobs[i++] = new ObjectStruct(false, .2f, 3);
+        gameobs[i++] = new ObjectStruct(false, .2f, 0);
 
-        gameobs [i++] = new ObjectStruct (false, 1.5f, 5);
-		gameobs [i++] = new ObjectStruct (false, .2f, 4);
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 5);
+        gameobs[i++] = new ObjectStruct(false, .2f, 4);
         gameobs[i++] = new ObjectStruct(true, .6f, 1);
-        gameobs [i++] = new ObjectStruct (false, .2f, 3);
-		gameobs [i++] = new ObjectStruct (false, .2f, 2);
-		gameobs [i++] = new ObjectStruct (true, .5f, 1);
+        gameobs[i++] = new ObjectStruct(false, .2f, 3);
+        gameobs[i++] = new ObjectStruct(false, .2f, 2);
+        gameobs[i++] = new ObjectStruct(true, .5f, 1);
 
-		gameobs [i++] = new ObjectStruct (false, 1.5f, 4);
-		gameobs [i++] = new ObjectStruct (false, 0f, 3);
-		gameobs [i++] = new ObjectStruct (false, 0f, 2);
+        gameobs[i++] = new ObjectStruct(false, 1.5f, 4);
+        gameobs[i++] = new ObjectStruct(false, 0f, 3);
+        gameobs[i++] = new ObjectStruct(false, 0f, 2);
 
-		gameobs [i++] = new ObjectStruct (false, 1f, 5);
-		j = i;
-		while(i < j + 4) {
-			gameobs [i++] = new ObjectStruct (false, .1f, 5 - (i - j));
-		}
+        gameobs[i++] = new ObjectStruct(false, 1f, 5);
+        j = i;
+        while (i < j + 4)
+        {
+            gameobs[i++] = new ObjectStruct(false, .1f, 5 - (i - j));
+        }
 
-		gameobs [i++] = new ObjectStruct (false, .5f, 1);
-		j = i;
-		while(i < j + 4) {
-			gameobs [i++] = new ObjectStruct (false, .1f, (i - j) + 1);
-		}
+        gameobs[i++] = new ObjectStruct(false, .5f, 1);
+        j = i;
+        while (i < j + 4)
+        {
+            gameobs[i++] = new ObjectStruct(false, .1f, (i - j) + 1);
+        }
 
         gameobs[i++] = new ObjectStruct(false, 1f, 1);
         gameobs[i++] = new ObjectStruct(false, .2f, 2);
@@ -166,8 +179,8 @@ public class ObjectSpawner : MonoBehaviour {
         gameobs[i++] = new ObjectStruct(false, .3f, 6);
 
         //phase 3   max delay = 1f  num = 208   2 + 19 + 7 + 7 + 7 + 7 + 28 + 6 + 28 + 1 + 20 + 7 + 7 + 13 + 13 + 13 + 13 + 10
-        gameobs [i++] = new ObjectStruct (false, .8f, 6);
-		gameobs [i++] = new ObjectStruct (false, .2f, 0);
+        gameobs[i++] = new ObjectStruct(false, .8f, 6);
+        gameobs[i++] = new ObjectStruct(false, .2f, 0);
 
         gameobs[i++] = new ObjectStruct(false, .5f, 0);
         gameobs[i++] = new ObjectStruct(true, .5f, 1);
@@ -391,10 +404,7 @@ public class ObjectSpawner : MonoBehaviour {
         gameobs[i++] = new ObjectStruct(true, .2f, 2);
         gameobs[i++] = new ObjectStruct(true, 0f, 4);
         gameobs[i++] = new ObjectStruct(true, .2f, 3);
-
-
-        StartCoroutine(Spawn()); // SpawnBooks()를 주기적으로 실행
-	}
+    }
 
 	IEnumerator Spawn () {
 		int i = 0;
