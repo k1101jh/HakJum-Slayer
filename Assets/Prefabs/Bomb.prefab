@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4450807434275106}
   - component: {fileID: 50689126879608466}
   - component: {fileID: 114186233669372416}
-  - component: {fileID: 58440668310528590}
   - component: {fileID: 1096200470496977134}
+  - component: {fileID: 807547241117187039}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Bomb
@@ -70,24 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1e0317cdc5042949c3e8b06eca1ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BookSlicedPrefab: {fileID: 100002, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
+  bombSlicedPrefab: {fileID: 0}
   startForce: 14
---- !u!58 &58440668310528590
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035680295770738}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.55
 --- !u!82 &1096200470496977134
 AudioSource:
   m_ObjectHideFlags: 0
@@ -184,6 +168,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &807547241117187039
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035680295770738}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1062791694029348
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,6 @@ GameObject:
   - component: {fileID: 4272273527227712}
   - component: {fileID: 33104813992209920}
   - component: {fileID: 23127766756914472}
-  - component: {fileID: 7702321122107794206}
   m_Layer: 0
   m_Name: BombBall
   m_TagString: Untagged
@@ -266,19 +265,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7702321122107794206
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062791694029348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1561805124458720
 GameObject:
   m_ObjectHideFlags: 0

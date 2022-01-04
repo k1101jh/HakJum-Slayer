@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Book : MonoBehaviour {
+public class Book : SliceableObject {
 
     Rigidbody2D rb; // Rigidbody2D인 요소 rb생성. Rigidbody2D는 물리를 적용할 때 필요
 
@@ -14,7 +14,7 @@ public class Book : MonoBehaviour {
 		rb.AddForce(transform.up * startForce, ForceMode2D.Impulse); // rb에 힘을 가한다(=던진다) (가하는 힘, 힘의 종류(모드)) (위쪽 방향으로 startForce만큼 힘을 가함, 순간적인 힘을 가함)
 	}
 
-    public void Slice()
+    override public void Slice()
     {
         GameObject slicedBook = Instantiate(BookSlicedPrefab, transform.position, transform.rotation); // 게임 오브젝트 slicedBook 생성. BookSlicedPrefab을 대입, transform의 위치 대입
         slicedBook.GetComponent<Rigidbody>().AddTorque(transform.right * Random.Range(20f, 40f));

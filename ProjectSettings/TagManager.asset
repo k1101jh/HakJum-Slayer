@@ -45,6 +45,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer
+  - name: Button Layer
     uniqueID: 2312871175
     locked: 0
