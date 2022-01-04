@@ -29,9 +29,10 @@ public class Pencil : MonoBehaviour {
     {
         RaycastHit2D hit = Physics2D.Raycast(prevP, newP, distance);
         {
-			SliceableObject	sliceableObj = hit.transform.GetComponent<SliceableObject>();
-			if(sliceableObj) {
-				sliceableObj.Slice();
+			try {
+				hit.transform.GetComponent<SliceableObject>().Slice();
+			} catch(NullReferenceException e) {
+
 			}
         }
     }

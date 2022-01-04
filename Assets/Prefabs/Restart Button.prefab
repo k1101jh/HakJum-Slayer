@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8367189601125822347}
   - component: {fileID: 8367189601125822356}
   - component: {fileID: 8367189601125822357}
+  - component: {fileID: 1278970561048873652}
   m_Layer: 0
   m_Name: Restart Button
   m_TagString: Untagged
@@ -117,5 +118,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b70da796a26a564b8eb295ce69e928b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartPrefab: {fileID: 1154253970977100, guid: 238f8b16634ee4bcc8a44b51087ed6da,
+  slicedPrefab: {fileID: 1154253970977100, guid: 238f8b16634ee4bcc8a44b51087ed6da,
     type: 3}
+--- !u!61 &1278970561048873652
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367189601125822359}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.5, y: 3.33}
+    newSize: {x: 8.5, y: 3.33}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.5, y: 3.33}
+  m_EdgeRadius: 0
