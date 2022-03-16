@@ -49,7 +49,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -69,7 +69,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BookSlicedPrefab: {fileID: 1703573140044266, guid: f251136a727fb4374927fdb8aa856d01,
     type: 3}
-  startForce: 0
+  startForce: 14
+  minRotationForce: 30
+  maxRotationForce: 60
+  minSplitForce: 100
+  maxSplitForce: 200
 --- !u!61 &7272198952692557635
 BoxCollider2D:
   m_ObjectHideFlags: 0

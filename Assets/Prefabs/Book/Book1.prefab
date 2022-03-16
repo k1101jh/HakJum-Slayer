@@ -151,6 +151,7 @@ MonoBehaviour:
   BookSlicedPrefab: {fileID: 1932711739149066, guid: 541e204ad08784b038c34122b1a25c0e,
     type: 3}
   startForce: 14
+  splitForce: 20
 --- !u!61 &8122909945619834495
 BoxCollider2D:
   m_ObjectHideFlags: 0
